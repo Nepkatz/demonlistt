@@ -1,82 +1,61 @@
 import { db } from "./firebase.js";
 
-import { 
-collection,
-getDocs
+import {
+    collection,
+    getDocs
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 
-const levelsContainer = document.getElementById("levels");
+const container = document.getElementById("levels");
 
 
-const querySnapshot = await getDocs(collection(db,"levels"));
+const snapshot = await getDocs(collection(db, "levels"));
 
 
-let levels = [];
+snapshot.forEach((doc) => {
+
+    const level = doc.data();
 
 
-querySnapshot.forEach((doc)=>{
+    container.innerHTML += `
 
-levels.push({
-id: doc.id,
-...doc.data()
-});
-
-});
+    <div class="level-card">
 
 
-levels.sort((a,b)=>a.rank-b.rank);
+        ${level.thumbnail ? 
+        `<img class="thumbnail" src="${level.thumbnail}">`
+        :
+        ""}
 
 
-
-levels.forEach(level=>{
-
-levelsContainer.innerHTML += `
-
-<div class="level-card">
+        <div class="level-info">
 
 
-<img class="thumbnail" src="${level.thumbnail || 'default.png'}">
+            <h2>
+            #${level.rank} ${level.name}
+            </h2>
 
 
-<div>
+            <p>
+            Creator: ${level.creator}
+            </p>
 
 
-<h2>
-#${level.rank} ${level.name}
-</h2>
+            <p>
+            Difficulty: ${level.difficulty}
+            </p>
 
 
-<p>
-Creator: ${level.creator}
-</p>
+            <p>
+            Version: ${level.version || "1.1"}
+            </p>
 
 
-<p>
-Difficulty: ${level.difficulty}
-</p>
+        </div>
 
 
-</div>
+    </div>
 
-
-</div>
-
-<h2>#${level.rank} ${level.name}</h2>
-
-<p>
-Creator: ${level.creator}
-</p>
-
-<p>
-Difficulty: ${level.difficulty}
-</p>
-
-</div>
-
-`;
+    `;
 
 });
-
-
-console.log("Loaded levels:", levels);
