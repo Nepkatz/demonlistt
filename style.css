@@ -1,45 +1,326 @@
-body{
+/* =========================
+   GD 1.1 DEMONLIST STYLE
+   ========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+:root {
+
+    --bg: #f6f6f6;
+    --card: #ffffff;
+    --text: #222222;
+    --secondary: #666666;
+    --border: #dddddd;
+    --accent: #5865f2;
+
+}
+
+
+.dark {
+
+    --bg: #111315;
+    --card: #181a1e;
+    --text: #eeeeee;
+    --secondary: #aaaaaa;
+    --border: #30343b;
+    --accent: #7289ff;
+
+}
+
+
+/* GLOBAL */
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
     margin:0;
-    font-family:Arial, sans-serif;
-    background:#fafafa;
+
+    font-family:"Inter", sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    transition:0.3s;
+
 }
 
-.navbar{
+
+
+/* NAVBAR */
+
+
+.navbar {
+
     height:70px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
-    padding:0 40px;
-    border-bottom:1px solid #ddd;
-    background:white;
+
+    padding:0 45px;
+
+    background:var(--card);
+
+    border-bottom:1px solid var(--border);
+
 }
 
-.logo{
-    font-size:24px;
-    font-weight:700;
+
+
+.logo {
+
+    font-size:22px;
+
+    font-weight:800;
+
 }
 
-nav{
+
+
+nav {
+
     display:flex;
+
     gap:25px;
+
 }
 
-nav a{
+
+
+nav a {
+
+    color:var(--text);
+
     text-decoration:none;
-    color:#444;
+
     font-weight:600;
+
+    padding:8px 0;
+
+    position:relative;
+
 }
 
-.notice{
-    max-width:1200px;
-    margin:20px auto;
-    padding:15px;
-    border:1px solid #e6d48a;
-    background:#fff7d6;
+
+
+nav a::after {
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--accent);
+
+    transition:.25s;
+
+}
+
+
+
+nav a:hover::after,
+nav a.active::after {
+
+    width:100%;
+
+}
+
+
+
+/* THEME BUTTON */
+
+
+#themeToggle {
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    color:var(--text);
+
+    padding:8px 12px;
+
     border-radius:8px;
+
+    cursor:pointer;
+
 }
 
-main{
-    max-width:1200px;
-    margin:20px auto;
+
+
+/* NOTICE */
+
+
+.notice {
+
+    max-width:1100px;
+
+    margin:25px auto;
+
+    padding:14px 20px;
+
+    background:#fff3cd;
+
+    border:1px solid #e6d37a;
+
+    border-radius:8px;
+
+    color:#806400;
+
 }
+
+
+
+/* MAIN */
+
+
+main {
+
+    max-width:1100px;
+
+    margin:auto;
+
+}
+
+
+
+/* LEVEL LIST */
+
+
+#levels {
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
+
+
+
+/* LEVEL ROW */
+
+
+.level {
+
+    display:grid;
+
+    grid-template-columns:90px 1fr 180px 180px;
+
+    align-items:center;
+
+    padding:20px;
+
+    border-bottom:1px solid var(--border);
+
+    transition:.2s;
+
+    animation:appear .3s ease;
+
+}
+
+
+
+.level:last-child {
+
+    border-bottom:none;
+
+}
+
+
+
+.level:hover {
+
+    background:rgba(120,120,120,0.08);
+
+    transform:translateX(4px);
+
+}
+
+
+
+/* RANK */
+
+
+.rank {
+
+    font-size:26px;
+
+    font-weight:800;
+
+}
+
+
+
+/* LEVEL NAME */
+
+
+.level-name {
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+
+
+/* CREATOR */
+
+
+.creator {
+
+    color:var(--secondary);
+
+}
+
+
+
+/* DIFFICULTY */
+
+
+.difficulty {
+
+    font-weight:700;
+
+}
+
+
+
+/* ANIMATION */
+
+
+@keyframes appear {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(10px);
+
+    }
+
+
+    to {
+
+        opacity
