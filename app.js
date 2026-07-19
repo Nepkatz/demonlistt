@@ -52,23 +52,8 @@ container.innerHTML += `
 
 </div>
 
-
-<div class="level-info">
-
-
-<img 
-class="thumbnail"
-src="${level.thumbnail}"
-alt="${level.name} thumbnail">
-
-
 <div class="level-name">
-
 ${level.name}
-
-</div>
-
-
 </div>
 
 
@@ -98,3 +83,4 @@ window.location.href =
 "level.html?id=" + id;
 
 }
+

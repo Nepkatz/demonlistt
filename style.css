@@ -277,6 +277,26 @@ transform:scale(1.05);
 
 }
 
+.notice{
+
+    background:#fff3cd;
+
+    color:#856404;
+
+    border:1px solid #ffeaa7;
+
+    padding:15px;
+
+    margin:20px auto;
+
+    border-radius:8px;
+
+    max-width:1000px;
+
+    font-weight:600;
+
+}
+
 }
 
 
@@ -296,5 +316,43 @@ font-weight:700;
 font-weight:700;
 
 color:#e53935;
+
+}
+
+:root{
+
+    --bg:#ffffff;
+    --card:#ffffff;
+    --text:#222222;
+    --border:#dddddd;
+
+}
+
+.dark{
+
+    --bg:#111111;
+    --card:#1b1b1b;
+    --text:#f0f0f0;
+    --border:#333333;
+
+}
+
+body{
+
+    background:var(--bg);
+    color:var(--text);
+    transition:.3s;
+
+}
+
+header,
+.level,
+.list-header{
+
+    background:var(--card);
+
+    color:var(--text);
+
+    border-color:var(--border);
 
 }
