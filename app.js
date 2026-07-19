@@ -43,7 +43,7 @@ levels.forEach(level=>{
 
 container.innerHTML += `
 
-<div class="level">
+<div class="level" onclick="openLevel('${level.id}')">
 
 
 <div class="rank">
@@ -56,9 +56,10 @@ container.innerHTML += `
 <div class="level-info">
 
 
-<img class="thumbnail"
-
-src="${level.thumbnail || 'https://via.placeholder.com/100x55'}">
+<img 
+class="thumbnail"
+src="${level.thumbnail}"
+alt="${level.name} thumbnail">
 
 
 <div class="level-name">
@@ -91,3 +92,9 @@ ${level.difficulty}
 `;
 
 });
+window.openLevel = function(id){
+
+window.location.href =
+"level.html?id=" + id;
+
+}

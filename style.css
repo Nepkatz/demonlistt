@@ -255,15 +255,27 @@ gap:20px;
 
 .thumbnail{
 
-width:100px;
+width:160px;
 
-height:55px;
+height:90px;
 
 object-fit:cover;
 
-border-radius:6px;
+border-radius:10px;
 
-border:1px solid #ccc;
+border:2px solid #ddd;
+
+transition:0.3s;
+
+}
+
+
+
+.level:hover .thumbnail{
+
+transform:scale(1.05);
+
+}
 
 }
 
