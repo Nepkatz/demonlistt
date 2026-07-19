@@ -162,40 +162,25 @@ border-radius:6px;
 }
 
 
-
-.level-card a{
-
-color:#111;
-
-text-decoration:none;
-
-}
-
-
-
-#level-page{
-
-width:900px;
-
-max-width:90%;
-
-margin:40px auto;
+.level-card {
 
 background:white;
 
-padding:35px;
+padding:25px;
+
+margin:20px 0;
 
 border-radius:10px;
+
+display:flex;
+
+gap:20px;
+
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
+border:3px solid #dcdcdc;
 
 }
-
-
-
-.big-image{
-
-width:100%;
-
-border-radius:10px;
 
 }
 
