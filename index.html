@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>
 Geometry Dash 1.1 Demonlist
 </title>
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -18,16 +15,18 @@ Geometry Dash 1.1 Demonlist
 <body>
 
 
-<header class="navbar">
+<header>
 
-<div class="logo">
-GD 1.1 Demonlist
+<div class="title">
+
+Geometry Dash 1.1 Demonlist
+
 </div>
 
 
 <nav>
 
-<a href="index.html">
+<a class="active" href="index.html">
 Demonlist
 </a>
 
@@ -48,46 +47,59 @@ Admin
 </a>
 
 
-<button id="themeButton">
-🌙
-</button>
-
+<button id="theme">
+Dark</button>
 
 </nav>
+
 
 </header>
 
 
 
-<section class="hero">
+<main>
 
+
+<section class="intro">
 
 <h1>
-Welcome to the Geometry Dash 1.1 Demonlist
+Geometry Dash 1.1 Demonlist
 </h1>
 
-
 <p>
-The hardest Geometry Dash 1.1 demons ranked by the community.
+The official ranking of the hardest Geometry Dash 1.1 demons.
 </p>
-
 
 </section>
 
 
 
+<section class="list">
 
-<section class="list-container">
 
+<div class="list-header">
 
-<h2>
-Demonlist
-</h2>
+<span>
+Rank
+</span>
+
+<span>
+Level
+</span>
+
+<span>
+Creator
+</span>
+
+<span>
+Difficulty
+</span>
+
+</div>
+
 
 
 <div id="levels">
-
-<!-- Firebase levels appear here -->
 
 </div>
 
@@ -95,11 +107,14 @@ Demonlist
 </section>
 
 
+</main>
 
 
-<script type="module" src="js/theme.js"></script>
 
-<script type="module" src="js/app.js"></script>
+
+<script type="module" src="theme.js"></script>
+
+<script type="module" src="app.js"></script>
 
 
 </body>
