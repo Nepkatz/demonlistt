@@ -35,6 +35,33 @@ levelsContainer.innerHTML += `
 
 <div class="level-card">
 
+
+<img class="thumbnail" src="${level.thumbnail || 'default.png'}">
+
+
+<div>
+
+
+<h2>
+#${level.rank} ${level.name}
+</h2>
+
+
+<p>
+Creator: ${level.creator}
+</p>
+
+
+<p>
+Difficulty: ${level.difficulty}
+</p>
+
+
+</div>
+
+
+</div>
+
 <h2>#${level.rank} ${level.name}</h2>
 
 <p>
