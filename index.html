@@ -1,123 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-<title>
-Geometry Dash 1.1 Demonlist
-</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-
+<title>Geometry Dash 1.1 Demonlist</title>
 
 <link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
 
+<header class="navbar">
 
-<header>
+    <div class="logo">
+        GD 1.1 Demonlist
+    </div>
 
-<div class="logo">
-Geometry Dash 1.1 Demonlist
-</div>
+    <nav>
 
+        <a class="active" href="index.html">List</a>
 
-<nav>
+        <a href="#">Records</a>
 
-<a class="selected" href="index.html">
-Demonlist
-</a>
+        <a href="#">Leaderboard</a>
 
-<a href="records.html">
-Records
-</a>
+        <a href="#">Submit Record</a>
 
-<a href="leaderboard.html">
-Leaderboard
-</a>
+        <a href="#">Admin</a>
 
-<a href="submit.html">
-Submit
-</a>
+    </nav>
 
-<a href="login.html">
-Admin
-</a>
-
-<button id="theme">
-☾
-</button>
-
-</nav>
+    <button id="themeToggle">
+        🌙
+    </button>
 
 </header>
 
-
-
-
 <main>
 
+    <h1>Geometry Dash 1.1 Demonlist</h1>
 
-<h1 class="page-title">
-Geometry Dash 1.1 Demonlist
-</h1>
+    <p>The hardest Geometry Dash 1.1 demons.</p>
 
+    <div class="notice">
+        The thumbnails are temporarily disabled. Thank you!
+    </div>
 
+    <div id="levels">
 
-<p class="description">
-The hardest demons from Geometry Dash version 1.1.
-</p>
+        <!-- Firebase levels appear here -->
 
-
-
-<div class="list-header">
-
-<div>
-Rank
-</div>
-
-<div>
-Level
-</div>
-
-<div>
-Creator
-</div>
-
-<div>
-Difficulty
-</div>
-
-</div>
-
-
-
-<div id="levels">
-
-</div>
-
-
+    </div>
 
 </main>
 
-
-
 <script type="module" src="app.js"></script>
-
-<script type="module" src="theme.js"></script>
-
+<script src="theme.js"></script>
 
 </body>
 
 </html>
-
-<div class="level-name">
-${level.name}
-</div>

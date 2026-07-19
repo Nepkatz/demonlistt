@@ -356,3 +356,78 @@ header,
     border-color:var(--border);
 
 }
+
+.navbar{
+
+    height:70px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 40px;
+
+    border-bottom:1px solid var(--border);
+
+    background:var(--card);
+
+}
+
+.logo{
+
+    font-size:22px;
+
+    font-weight:800;
+
+}
+
+nav{
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:var(--text);
+
+    font-weight:600;
+
+    position:relative;
+
+    padding-bottom:5px;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:0;
+
+    height:2px;
+
+    background:#4a7cff;
+
+    transition:0.25s;
+
+}
+
+nav a:hover::after,
+nav a.active::after{
+
+    width:100%;
+
+}
