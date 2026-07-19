@@ -10,62 +10,148 @@
 
 <link rel="stylesheet" href="style.css">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 </head>
+
 
 <body>
 
+
 <header class="navbar">
 
-    <div class="logo">
-        GD 1.1 Demonlist
-    </div>
 
-    <nav>
+<div class="logo">
+GD 1.1 Demonlist
+</div>
 
-        <a class="active" href="index.html">
-            Demonlist
-        </a>
 
-        <a href="records.html">
-            Records
-        </a>
 
-        <a href="leaderboard.html">
-            Leaderboard
-        </a>
+<nav>
 
-        <a href="submit.html">
-            Submit
-        </a>
+<a class="active" href="index.html">
+Demonlist
+</a>
 
-        <a href="login.html">
-            Admin
-        </a>
 
-    </nav>
+<a href="records.html">
+Records
+</a>
 
-    <button id="themeToggle">
-        🌙
-    </button>
+
+<a href="leaderboard.html">
+Leaderboard
+</a>
+
+
+<a href="submit.html">
+Submit
+</a>
+
+
+<a href="login.html">
+Admin
+</a>
+
+
+</nav>
+
+
+
+<button id="themeToggle">
+🌙
+</button>
+
 
 </header>
 
-<div class="notice">
-    The thumbnails are temporarily disabled. Thank you!
-</div>
+
+
+
 
 <main>
 
-    <div id="levels">
 
-        <!-- Firebase levels load here -->
+<div class="notice">
 
-    </div>
+The thumbnails are temporarily disabled. Thank you!
+
+</div>
+
+
+
+<div class="top-section">
+
+
+<h1>
+Demonlist
+</h1>
+
+
+<p>
+Ranking the hardest Geometry Dash 1.1 demons.
+</p>
+
+
+<input 
+id="search"
+placeholder="Search levels..."
+>
+
+
+</div>
+
+
+
+
+
+<div class="list-header">
+
+
+<div>
+Rank
+</div>
+
+
+<div>
+Level
+</div>
+
+
+<div>
+Creator
+</div>
+
+
+<div>
+Difficulty
+</div>
+
+
+</div>
+
+
+
+
+
+<div id="levels">
+
+</div>
+
+
 
 </main>
 
-<script type="module" src="app.js"></script>
-<script src="theme.js"></script>
+
+
+
+
+<script type="module" src="js/app.js"></script>
+
+<script src="js/theme.js"></script>
+
 
 </body>
 

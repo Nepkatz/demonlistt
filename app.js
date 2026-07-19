@@ -1,5 +1,6 @@
 import {db} from "./firebase.js";
 
+
 import {
 
 collection,
@@ -7,34 +8,50 @@ getDocs
 
 }
 
-from
+from 
 
 "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 
 
-const container=document.getElementById("levels");
+const container =
+document.getElementById("levels");
 
 
 
-const snapshot=
+let allLevels=[];
+
+
+
+const snapshot =
 await getDocs(collection(db,"levels"));
 
 
 
-let levels=[];
+snapshot.forEach((doc)=>{
 
 
+allLevels.push({
 
-snapshot.forEach(doc=>{
+id:doc.id,
 
-levels.push(doc.data());
+...doc.data()
+
+});
+
 
 });
 
 
 
-levels.sort((a,b)=>a.rank-b.rank);
+allLevels.sort((a,b)=>a.rank-b.rank);
+
+
+
+function displayLevels(levels){
+
+
+container.innerHTML="";
 
 
 
@@ -43,7 +60,9 @@ levels.forEach(level=>{
 
 container.innerHTML += `
 
-<div class="level" onclick="openLevel('${level.id}')">
+
+<div class="level"
+onclick="openLevel('${level.id}')">
 
 
 <div class="rank">
@@ -52,12 +71,17 @@ container.innerHTML += `
 
 </div>
 
+
+
 <div class="level-name">
+
 ${level.name}
+
 </div>
 
 
-<div>
+
+<div class="creator">
 
 ${level.creator}
 
@@ -72,15 +96,51 @@ ${level.difficulty}
 </div>
 
 
+
 </div>
+
 
 `;
 
-});
-window.openLevel = function(id){
 
-window.location.href =
-"level.html?id=" + id;
+});
+
 
 }
 
+
+
+displayLevels(allLevels);
+
+
+
+
+document.getElementById("search").oninput=function(){
+
+
+let value=this.value.toLowerCase();
+
+
+
+displayLevels(
+
+allLevels.filter(level=>
+
+level.name.toLowerCase().includes(value)
+
+)
+
+);
+
+
+};
+
+
+
+
+
+window.openLevel=function(id){
+
+window.location.href="level.html?id="+id;
+
+}

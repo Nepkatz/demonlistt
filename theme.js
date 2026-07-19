@@ -1,7 +1,18 @@
-const button=document.getElementById("theme");
+const button =
+document.getElementById("themeToggle");
 
 
-button.onclick=()=>{
+if(localStorage.getItem("theme") === "dark"){
+
+document.body.classList.add("dark");
+
+button.textContent="☀️";
+
+}
+
+
+
+button.onclick=function(){
 
 
 document.body.classList.toggle("dark");
@@ -9,49 +20,21 @@ document.body.classList.toggle("dark");
 
 if(document.body.classList.contains("dark")){
 
-button.innerText="Light";
+
+localStorage.setItem("theme","dark");
+
+button.textContent="☀️";
+
+
+}else{
+
+
+localStorage.setItem("theme","light");
+
+button.textContent="🌙";
+
 
 }
-
-else{
-
-button.innerText="Dark";
-
-}
-
-const button =
-document.getElementById("themeToggle");
-
-const saved =
-localStorage.getItem("theme");
-
-if(saved==="dark"){
-
-    document.body.classList.add("dark");
-
-    button.textContent="☀️";
-
-}
-
-button.onclick = () => {
-
-    document.body.classList.toggle("dark");
-
-    if(document.body.classList.contains("dark")){
-
-        localStorage.setItem("theme","dark");
-
-        button.textContent="☀️";
-
-    }else{
-
-        localStorage.setItem("theme","light");
-
-        button.textContent="🌙";
-
-    }
-
-};
 
 
 };
