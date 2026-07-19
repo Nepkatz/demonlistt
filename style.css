@@ -431,3 +431,123 @@ nav a.active::after{
     width:100%;
 
 }
+
+.topbar{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:16px 40px;
+
+    background:#1c1c1c;
+
+    border-bottom:3px solid #2d2d2d;
+
+}
+
+.brand-title{
+
+    font-size:24px;
+
+    font-weight:800;
+
+    color:white;
+
+}
+
+.brand-subtitle{
+
+    font-size:12px;
+
+    color:#aaaaaa;
+
+}
+
+.main-nav{
+
+    display:flex;
+
+    gap:24px;
+
+}
+
+.main-nav a{
+
+    color:#d8d8d8;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    padding:10px 0;
+
+    border-bottom:3px solid transparent;
+
+    transition:.2s;
+
+}
+
+.main-nav a:hover{
+
+    color:white;
+
+}
+
+.main-nav a.active{
+
+    color:white;
+
+    border-bottom:3px solid #4a7cff;
+
+}
+
+.level-row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:18px;
+
+    border-bottom:1px solid #ddd;
+
+    transition:.2s;
+
+}
+
+.level-row:hover{
+
+    background:#f5f5f5;
+
+}
+
+.rank{
+
+    width:70px;
+
+    font-size:28px;
+
+    font-weight:800;
+
+}
+
+.level-title{
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+.level-meta{
+
+    color:#666;
+
+    margin-top:4px;
+
+}
