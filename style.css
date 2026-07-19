@@ -1,79 +1,37 @@
-:root {
-
---background:#f5f5f5;
-
---card:white;
-
---text:#111;
-
---border:#d5d5d5;
-
-}
-
-
-
-.dark {
-
---background:#111;
-
---card:#1b1b1b;
-
---text:white;
-
---border:#333;
-
-}
-
-
-
-* {
-
-box-sizing:border-box;
-
-}
-
-
-
-body {
+body{
 
 margin:0;
 
 font-family:Arial, Helvetica, sans-serif;
 
-background:var(--background);
+background:#ffffff;
 
-color:var(--text);
-
-transition:0.3s;
+color:#222;
 
 }
 
 
+header{
 
-/* NAVBAR */
+height:70px;
 
-
-.navbar {
+border-bottom:1px solid #ddd;
 
 display:flex;
 
-justify-content:space-between;
-
 align-items:center;
 
-padding:20px 40px;
+justify-content:space-between;
 
-background:var(--card);
-
-border-bottom:2px solid var(--border);
+padding:0 50px;
 
 }
 
 
 
-.logo {
+.title{
 
-font-size:24px;
+font-size:22px;
 
 font-weight:bold;
 
@@ -81,71 +39,43 @@ font-weight:bold;
 
 
 
-nav a {
-
-color:var(--text);
-
-text-decoration:none;
+nav a{
 
 margin:0 12px;
 
+text-decoration:none;
+
+color:#444;
+
 }
 
 
 
-button {
+nav a:hover{
+
+color:#000;
+
+}
+
+
+
+button{
+
+padding:8px 15px;
+
+border:1px solid #ccc;
+
+background:white;
 
 cursor:pointer;
 
-border:none;
-
-padding:10px;
-
-border-radius:8px;
-
 }
 
 
 
+main{
 
-
-/* HERO */
-
-
-.hero {
-
-width:85%;
-
-margin:40px auto;
-
-background:var(--card);
-
-border:2px solid var(--border);
-
-border-radius:15px;
-
-padding:40px;
-
-text-align:center;
-
-}
-
-
-
-.hero h1 {
-
-font-size:38px;
-
-}
-
-
-
-/* LIST */
-
-
-.list-container {
-
-width:85%;
+max-width:1100px;
 
 margin:auto;
 
@@ -153,68 +83,83 @@ margin:auto;
 
 
 
-.list-container h2 {
+.intro{
 
-font-size:30px;
+margin-top:40px;
+
+padding-bottom:20px;
+
+border-bottom:1px solid #ddd;
 
 }
 
 
 
-/* LEVEL CARD */
+.intro h1{
+
+font-size:34px;
+
+}
 
 
-.level-card {
 
-display:flex;
+.list{
+
+margin-top:30px;
+
+border:1px solid #ddd;
+
+border-radius:8px;
+
+overflow:hidden;
+
+}
+
+
+
+.list-header{
+
+display:grid;
+
+grid-template-columns:100px 1fr 200px 180px;
+
+background:#f4f4f4;
+
+padding:15px;
+
+font-weight:bold;
+
+}
+
+
+
+.level{
+
+display:grid;
+
+grid-template-columns:100px 1fr 200px 180px;
 
 align-items:center;
 
-gap:25px;
+padding:18px;
 
-background:var(--card);
-
-border:3px solid var(--border);
-
-border-radius:15px;
-
-padding:20px;
-
-margin:20px 0;
-
-transition:0.25s;
+border-top:1px solid #ddd;
 
 }
 
 
 
-.level-card:hover {
+.level:hover{
 
-transform:translateY(-4px);
-
-}
-
-
-
-.thumbnail {
-
-width:220px;
-
-height:120px;
-
-object-fit:cover;
-
-border-radius:10px;
-
-border:2px solid var(--border);
+background:#f8f8f8;
 
 }
 
 
 
-.rank {
+.rank{
 
-font-size:35px;
+font-size:25px;
 
 font-weight:bold;
 
@@ -222,8 +167,63 @@ font-weight:bold;
 
 
 
-.difficulty {
+.level-name{
+
+font-size:20px;
 
 font-weight:bold;
+
+}
+
+
+
+.difficulty{
+
+font-weight:bold;
+
+}
+
+
+
+.dark{
+
+background:#111;
+
+color:white;
+
+}
+
+
+.dark header{
+
+border-color:#333;
+
+}
+
+
+.dark .list{
+
+border-color:#333;
+
+}
+
+
+.dark .list-header{
+
+background:#222;
+
+}
+
+
+.dark .level{
+
+border-color:#333;
+
+}
+
+
+.dark nav a{
+
+color:#ddd;
 
 }

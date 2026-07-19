@@ -1,10 +1,8 @@
-import { db } from "./firebase.js";
-
+import {db} from "./firebase.js";
 
 import {
 
 collection,
-
 getDocs
 
 }
@@ -15,47 +13,26 @@ from
 
 
 
-const container =
-document.getElementById("levels");
+const container=document.getElementById("levels");
 
 
 
-const snapshot =
-await getDocs(collection(db,"levels"));
+const data=await getDocs(
+collection(db,"levels")
+);
 
 
 
-let levels=[];
+data.forEach(doc=>{
+
+
+let level=doc.data();
 
 
 
-snapshot.forEach((doc)=>{
+container.innerHTML+=`
 
-
-levels.push({
-
-id:doc.id,
-
-...doc.data()
-
-});
-
-
-});
-
-
-
-levels.sort((a,b)=>a.rank-b.rank);
-
-
-
-levels.forEach(level=>{
-
-
-container.innerHTML += `
-
-
-<div class="level-card">
+<div class="level">
 
 
 <div class="rank">
@@ -65,44 +42,30 @@ container.innerHTML += `
 </div>
 
 
+<div class="level-name">
 
-<img class="thumbnail"
+${level.name}
 
-src="${level.thumbnail || 'https://via.placeholder.com/220x120'}">
+</div>
 
 
 <div>
 
+${level.creator}
 
-<h2>
-
-${level.name}
-
-</h2>
+</div>
 
 
-
-<p>
-Creator: ${level.creator}
-</p>
-
-
-
-<p class="difficulty">
+<div class="difficulty">
 
 ${level.difficulty}
 
-</p>
-
-
 </div>
 
 
 </div>
-
 
 `;
-
 
 
 });

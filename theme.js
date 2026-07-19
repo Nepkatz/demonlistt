@@ -1,19 +1,4 @@
-const button =
-document.getElementById("themeButton");
-
-
-let theme =
-localStorage.getItem("theme");
-
-
-if(theme==="dark"){
-
-document.body.classList.add("dark");
-
-button.textContent="☀️";
-
-}
-
+const button=document.getElementById("theme");
 
 
 button.onclick=()=>{
@@ -24,21 +9,13 @@ document.body.classList.toggle("dark");
 
 if(document.body.classList.contains("dark")){
 
-
-localStorage.setItem("theme","dark");
-
-button.textContent="☀️";
-
+button.innerText="Light";
 
 }
 
 else{
 
-
-localStorage.setItem("theme","light");
-
-button.textContent="🌙";
-
+button.innerText="Dark";
 
 }
 
