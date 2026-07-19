@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>
 Geometry Dash 1.1 Demonlist
 </title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -21,295 +22,98 @@ Geometry Dash 1.1 Demonlist
 <body>
 
 
-<!-- NAVIGATION -->
-
-<header class="navbar">
-
+<header>
 
 <div class="logo">
-
 Geometry Dash 1.1 Demonlist
-
 </div>
-
 
 
 <nav>
 
-
-<a class="active" href="index.html">
-
+<a class="selected" href="index.html">
 Demonlist
-
 </a>
-
 
 <a href="records.html">
-
 Records
-
 </a>
-
-
 
 <a href="leaderboard.html">
-
 Leaderboard
-
 </a>
-
-
 
 <a href="submit.html">
-
 Submit
-
 </a>
-
-
 
 <a href="login.html">
-
 Admin
-
 </a>
 
-
-
-<button id="themeButton">
-
-🌙
-
+<button id="theme">
+☾
 </button>
 
-
 </nav>
-
 
 </header>
 
 
 
 
-
-<!-- HERO -->
-
-
-<section class="hero">
+<main>
 
 
-<h1>
-
-Welcome to the Geometry Dash 1.1 Demonlist
-
+<h1 class="page-title">
+Geometry Dash 1.1 Demonlist
 </h1>
 
 
-<p>
 
-The official ranking of the hardest Geometry Dash 1.1 demons.
-
+<p class="description">
+The hardest demons from Geometry Dash version 1.1.
 </p>
 
 
 
-</section>
+<div class="list-header">
 
+<div>
+Rank
+</div>
 
+<div>
+Level
+</div>
 
+<div>
+Creator
+</div>
 
-
-
-
-<!-- STATISTICS -->
-
-
-<section class="statistics">
-
-
-<div class="stat-box">
-
-<h2 id="levelCount">
-
-0
-
-</h2>
-
-<p>
-
-Levels
-
-</p>
+<div>
+Difficulty
+</div>
 
 </div>
 
 
 
-
-<div class="stat-box">
-
-<h2>
-
-0
-
-</h2>
-
-<p>
-
-Players
-
-</p>
+<div id="levels">
 
 </div>
 
 
 
+</main>
 
 
-<div class="stat-box">
 
-<h2>
+<script type="module" src="app.js"></script>
 
-0
-
-</h2>
-
-<p>
-
-Records
-
-</p>
-
-</div>
-
-
-
-
-
-<div class="stat-box">
-
-<h2>
-
-1.1
-
-</h2>
-
-<p>
-
-Version
-
-</p>
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-
-<!-- SEARCH -->
-
-
-<section class="search-area">
-
-
-<input
-
-id="search"
-
-placeholder="Search levels..."
-
->
-
-
-</section>
-
-
-
-
-
-
-
-<!-- DEMONLIST -->
-
-
-<section class="demonlist">
-
-
-<div class="section-title">
-
-<h2>
-
-Demonlist
-
-</h2>
-
-
-
-<p>
-
-Ranked hardest to easiest
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-<div class="level-container" id="levels">
-
-
-
-<!-- FIREBASE LEVELS LOAD HERE -->
-
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-
-<footer>
-
-
-<p>
-
-Geometry Dash 1.1 Demonlist
-
-</p>
-
-
-</footer>
-
-
-
-
-
-
-<script type="module" src="js/theme.js"></script>
-
-
-<script type="module" src="js/app.js"></script>
-
+<script type="module" src="theme.js"></script>
 
 
 </body>
-
 
 </html>
