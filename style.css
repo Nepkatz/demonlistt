@@ -1,21 +1,29 @@
+*{
+
+box-sizing:border-box;
+
+}
+
+
 body{
 
 margin:0;
 
-font-family:Arial, Helvetica, sans-serif;
+font-family:"Inter",Arial,sans-serif;
 
-background:#ffffff;
+background:#fafafa;
 
 color:#222;
 
+transition:.3s;
+
 }
+
 
 
 header{
 
 height:70px;
-
-border-bottom:1px solid #ddd;
 
 display:flex;
 
@@ -23,17 +31,33 @@ align-items:center;
 
 justify-content:space-between;
 
-padding:0 50px;
+padding:0 60px;
+
+background:white;
+
+border-bottom:1px solid #ddd;
 
 }
 
 
 
-.title{
+.logo{
 
 font-size:22px;
 
-font-weight:bold;
+font-weight:800;
+
+}
+
+
+
+nav{
+
+display:flex;
+
+align-items:center;
+
+gap:25px;
 
 }
 
@@ -41,19 +65,44 @@ font-weight:bold;
 
 nav a{
 
-margin:0 12px;
-
 text-decoration:none;
 
-color:#444;
+color:#555;
+
+font-weight:600;
+
+position:relative;
 
 }
 
 
 
-nav a:hover{
+nav a::after{
 
-color:#000;
+content:"";
+
+height:2px;
+
+width:0;
+
+background:#5865f2;
+
+position:absolute;
+
+bottom:-8px;
+
+left:0;
+
+transition:.3s;
+
+}
+
+
+
+nav a:hover::after,
+.selected::after{
+
+width:100%;
 
 }
 
@@ -61,11 +110,13 @@ color:#000;
 
 button{
 
-padding:8px 15px;
-
-border:1px solid #ccc;
+border:1px solid #ddd;
 
 background:white;
+
+padding:8px 14px;
+
+border-radius:8px;
 
 cursor:pointer;
 
@@ -75,45 +126,32 @@ cursor:pointer;
 
 main{
 
-max-width:1100px;
+max-width:1000px;
 
-margin:auto;
-
-}
-
-
-
-.intro{
-
-margin-top:40px;
-
-padding-bottom:20px;
-
-border-bottom:1px solid #ddd;
+margin:40px auto;
 
 }
 
 
 
-.intro h1{
+.page-title{
 
-font-size:34px;
+font-size:36px;
+
+margin-bottom:5px;
+
+}
+
+
+
+.description{
+
+color:#777;
+
+margin-bottom:40px;
 
 }
 
-
-
-.list{
-
-margin-top:30px;
-
-border:1px solid #ddd;
-
-border-radius:8px;
-
-overflow:hidden;
-
-}
 
 
 
@@ -121,13 +159,17 @@ overflow:hidden;
 
 display:grid;
 
-grid-template-columns:100px 1fr 200px 180px;
+grid-template-columns:90px 1fr 180px 180px;
 
-background:#f4f4f4;
+padding:15px 20px;
 
-padding:15px;
+background:#f0f0f0;
 
-font-weight:bold;
+border:1px solid #ddd;
+
+font-weight:700;
+
+border-radius:8px 8px 0 0;
 
 }
 
@@ -137,13 +179,21 @@ font-weight:bold;
 
 display:grid;
 
-grid-template-columns:100px 1fr 200px 180px;
+grid-template-columns:90px 1fr 180px 180px;
 
 align-items:center;
 
-padding:18px;
+padding:20px;
 
-border-top:1px solid #ddd;
+background:white;
+
+border:1px solid #ddd;
+
+border-top:none;
+
+animation:appear .4s ease;
+
+transition:.2s;
 
 }
 
@@ -151,7 +201,31 @@ border-top:1px solid #ddd;
 
 .level:hover{
 
-background:#f8f8f8;
+background:#f7f7f7;
+
+transform:translateX(5px);
+
+}
+
+
+
+@keyframes appear{
+
+from{
+
+opacity:0;
+
+transform:translateY(15px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
 
 }
 
@@ -159,9 +233,37 @@ background:#f8f8f8;
 
 .rank{
 
-font-size:25px;
+font-size:28px;
 
-font-weight:bold;
+font-weight:800;
+
+}
+
+
+
+.level-info{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+}
+
+
+
+.thumbnail{
+
+width:100px;
+
+height:55px;
+
+object-fit:cover;
+
+border-radius:6px;
+
+border:1px solid #ccc;
 
 }
 
@@ -171,7 +273,7 @@ font-weight:bold;
 
 font-size:20px;
 
-font-weight:bold;
+font-weight:700;
 
 }
 
@@ -179,51 +281,8 @@ font-weight:bold;
 
 .difficulty{
 
-font-weight:bold;
+font-weight:700;
 
-}
-
-
-
-.dark{
-
-background:#111;
-
-color:white;
-
-}
-
-
-.dark header{
-
-border-color:#333;
-
-}
-
-
-.dark .list{
-
-border-color:#333;
-
-}
-
-
-.dark .list-header{
-
-background:#222;
-
-}
-
-
-.dark .level{
-
-border-color:#333;
-
-}
-
-
-.dark nav a{
-
-color:#ddd;
+color:#e53935;
 
 }

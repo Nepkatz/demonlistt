@@ -17,20 +17,31 @@ const container=document.getElementById("levels");
 
 
 
-const data=await getDocs(
-collection(db,"levels")
-);
+const snapshot=
+await getDocs(collection(db,"levels"));
 
 
 
-data.forEach(doc=>{
-
-
-let level=doc.data();
+let levels=[];
 
 
 
-container.innerHTML+=`
+snapshot.forEach(doc=>{
+
+levels.push(doc.data());
+
+});
+
+
+
+levels.sort((a,b)=>a.rank-b.rank);
+
+
+
+levels.forEach(level=>{
+
+
+container.innerHTML += `
 
 <div class="level">
 
@@ -42,9 +53,20 @@ container.innerHTML+=`
 </div>
 
 
+<div class="level-info">
+
+
+<img class="thumbnail"
+
+src="${level.thumbnail || 'https://via.placeholder.com/100x55'}">
+
+
 <div class="level-name">
 
 ${level.name}
+
+</div>
+
 
 </div>
 
@@ -54,6 +76,7 @@ ${level.name}
 ${level.creator}
 
 </div>
+
 
 
 <div class="difficulty">
@@ -66,6 +89,5 @@ ${level.difficulty}
 </div>
 
 `;
-
 
 });
