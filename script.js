@@ -1,7 +1,78 @@
-fetch("levels.json")
-.then(response=>response.json())
-.then(levels=>{
+import { db } from "./firebase.js";
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
+
+const levelsRef = collection(db, "levels");
+
+const snapshot = await getDocs(levelsRef);
+
+
+let levels = [];
+
+
+snapshot.forEach((doc)=>{
+
+levels.push({
+id: doc.id,
+...doc.data()
+});
+
+});
+
+
+
+let container = document.getElementById("levels");
+
+
+levels.sort((a,b)=>a.rank-b.rank);
+
+
+
+levels.forEach(level=>{
+
+
+container.innerHTML += `
+
+<div class="level-card">
+
+<div class="rank">
+#${level.rank}
+</div>
+
+
+<img src="${level.thumbnail || "images/default.png"}">
+
+
+<div>
+
+<h2>
+
+<a href="level.html?id=${level.id}">
+
+${level.name}
+
+</a>
+
+</h2>
+
+
+<p>
+Creator: ${level.creator}
+</p>
+
+
+<p>
+Difficulty: ${level.difficulty}
+</p>
+
+
+</div>
+
+</div>
+
+`;
+
+});
 
 let container=document.getElementById("levels");
 

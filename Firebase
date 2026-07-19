@@ -1,0 +1,31 @@
+[
+{
+"id":"military-zone",
+
+"name":"Military Zone",
+
+"creator":"User",
+
+"difficulty":"Insane Demon",
+
+"rank":1,
+
+"version":"1.1",
+
+"thumbnail":"images/military-zone.png",
+
+"description":"The first ranked level of the Geometry Dash 1.1 Demonlist."
+
+}
+]
+,
+{
+"id":"new-level",
+"name":"New Level",
+"creator":"Creator",
+"difficulty":"Extreme Demon",
+"rank":2,
+"version":"1.1",
+"thumbnail":"images/new.png",
+"description":"New demon description"
+}
