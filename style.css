@@ -400,3 +400,90 @@ levels.forEach(level => {
     font-weight:700;
 
 }
+
+
+.level{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
+    overflow:hidden;
+
+    transition:.2s;
+
+}
+
+.level:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.thumbnail{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.level-info{
+
+    padding:20px;
+
+}
+
+.rank{
+
+    position:absolute;
+
+    margin:15px;
+
+    background:#000000cc;
+
+    color:white;
+
+    padding:8px 14px;
+
+    border-radius:8px;
+
+    font-weight:800;
+
+    z-index:2;
+
+}
+
+.level-name{
+
+    font-size:28px;
+
+    font-weight:800;
+
+}
+
+.creator{
+
+    margin-top:8px;
+
+    color:var(--gray);
+
+}
+
+.difficulty{
+
+    margin-top:12px;
+
+    font-weight:700;
+
+    font-size:18px;
+
+}

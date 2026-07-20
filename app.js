@@ -1,7 +1,7 @@
-import {db} from "./firebase.js";
-
+import { db } from "./fire.js";
 
 import {
+
 
 collection,
 getDocs
@@ -55,10 +55,52 @@ container.innerHTML="";
 
 
 
-levels.forEach(level=>{
-
+levels.forEach(level => {
 
 container.innerHTML += `
+
+<div class="level">
+
+    <div class="rank">
+        #${level.rank}
+    </div>
+
+    <div class="thumbnail-container">
+
+        <img
+            class="thumbnail"
+            src="${level.thumbnail || 'images/placeholder.png'}"
+            alt="${level.name}">
+
+    </div>
+
+    <div class="level-info">
+
+        <div class="level-name">
+
+            ${level.name}
+
+        </div>
+
+        <div class="creator">
+
+            by ${level.creator}
+
+        </div>
+
+        <div class="difficulty">
+
+            ${level.difficulty}
+
+        </div>
+
+    </div>
+
+</div>
+
+`;
+
+});
 
 
 <div class="level"
@@ -148,3 +190,5 @@ window.location.href="level.html?id="+id;
 <img class="thumbnail"
 src="${level.thumbnail}"
 alt="${level.name}">
+
+console.log("Documents found:", snapshot.size);
