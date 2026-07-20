@@ -144,3 +144,7 @@ window.openLevel=function(id){
 window.location.href="level.html?id="+id;
 
 }
+
+<img class="thumbnail"
+src="${level.thumbnail}"
+alt="${level.name}">

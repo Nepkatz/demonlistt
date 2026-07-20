@@ -304,3 +304,99 @@ font-weight:700;
 color:#e53935;
 
 }
+
+import { db } from "./firebase.js";
+
+import {
+  collection,
+  getDocs
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+const levelsContainer = document.getElementById("levels");
+
+const snapshot = await getDocs(collection(db, "levels"));
+
+let levels = [];
+
+snapshot.forEach((doc) => {
+  levels.push({
+    id: doc.id,
+    ...doc.data()
+  });
+});
+
+levels.sort((a, b) => a.rank - b.rank);
+
+levelsContainer.innerHTML = "";
+
+levels.forEach(level => {
+
+  levelsContainer.innerHTML += `
+  
+  <div class="level">
+
+    <div class="rank">
+      #${level.rank}
+    </div>
+
+    <div class="level-info">
+
+      <img
+        class="thumbnail"
+        src="${level.thumbnail || 'images/placeholder.png'}"
+        alt="${level.name}">
+
+      <div>
+
+        <div class="level-name">
+          ${level.name}
+        </div>
+
+        <div class="creator">
+          by ${level.creator}
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="difficulty">
+      ${level.difficulty}
+    </div>
+
+  </div>
+
+  `;
+});
+
+.level-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.thumbnail{
+
+    width:160px;
+
+    height:90px;
+
+    object-fit:cover;
+
+    border-radius:8px;
+
+    border:1px solid var(--border);
+
+}
+
+.level-name{
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
